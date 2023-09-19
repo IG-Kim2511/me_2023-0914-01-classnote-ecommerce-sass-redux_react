@@ -7,6 +7,9 @@ const Card = ({ item }) => {
   return (
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
+
+      {/* 🦄q: hover하면 이미지가 바뀜.
+        컨테이너안에 이미지가 2개있어야 함 */}
         <div className="image">
           {item?.attributes.isNew && <span>New Season</span>}
           <img
