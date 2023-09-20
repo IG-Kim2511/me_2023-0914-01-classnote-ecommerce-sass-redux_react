@@ -28,7 +28,8 @@ const Products = () => {
 
   return (
     <div className="products">
-      <div className="left">
+
+      <main className="left">
         <div className="filterItem">
           <h2>Product Categories</h2>
           {data?.map((item) => (
@@ -39,7 +40,8 @@ const Products = () => {
                 value={item.id}
                 onChange={handleChange}
               />
-              <label htmlFor={item.id}>{item.attributes.title}</label>
+              {/* 🦄htmlFor */}
+              <label htmlFor={item.id}>{item.attributes.title}</label>  
             </div>
           ))}
         </div>
@@ -47,10 +49,14 @@ const Products = () => {
           <h2>Filter by price</h2>
           <div className="inputItem">
             <span>0</span>
+
+            {/* 🦄input type='range' */}
             <input
               type="range"
               min={0}
               max={1000}
+
+              // 🦄 onChange={(e) => setMaxPrice(e.target.value)}
               onChange={(e) => setMaxPrice(e.target.value)}
             />
             <span>{maxPrice}</span>
@@ -64,6 +70,7 @@ const Products = () => {
               id="asc"
               value="asc"
               name="price"
+              //  🦄 onChange={(e) => setSort("asc")}
               onChange={(e) => setSort("asc")}
             />
             <label htmlFor="asc">Price (Lowest first)</label>
@@ -74,20 +81,23 @@ const Products = () => {
               id="desc"
               value="desc"
               name="price"
+              //  🦄 onChange={(e) => setSort("desc")}
               onChange={(e) => setSort("desc")}
             />
             <label htmlFor="desc">Price (Highest first)</label>
           </div>
         </div>
-      </div>
-      <div className="right">
+      </main>
+
+      {/* right */}
+      <main className="right">
         <img
           className="catImg"
           src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt=""
         />
         <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats}/>
-      </div>
+      </main>
     </div>
   );
 };
