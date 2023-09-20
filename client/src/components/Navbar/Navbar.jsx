@@ -10,7 +10,10 @@ import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  // 👉0255
   const [open,setOpen] = useState(false)
+
   const products = useSelector((state) => state.cart.products);
 
   return (
@@ -55,13 +58,15 @@ const Navbar = () => {
             <SearchIcon/>
             <PersonOutlineOutlinedIcon/>
             <FavoriteBorderOutlinedIcon/>
-            <div className="cartIcon" onClick={()=>setOpen(!open)}>
+            {/* 👉0255 icon click*/}
+            <div className="cartIcon"  onClick={()=>setOpen(!open)}>
               <ShoppingCartOutlinedIcon/>
               <span>{products.length}</span>
             </div>
           </div>
         </div>
       </div>
+      {/* 🦄0255 open true일때  <Cart/> 보여줌 */}
       {open && <Cart/>}
     </div>
   );
