@@ -12,6 +12,8 @@ import { addToCart } from "../../redux/cartReducer";
 const Product = () => {
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
+
+  // 👉0127 
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
@@ -22,7 +24,7 @@ const Product = () => {
       {loading ? (
         "loading"
       ) : (
-        <>
+        <div>
           <div className="left">
             <div className="images">
               <img
@@ -58,6 +60,11 @@ const Product = () => {
             <p>{data?.attributes?.desc}</p>
             <div className="quantity">
               <button
+
+                /*🦄0127 ㅋ: -1로 떨어지지 않게 하기
+                 값이 1이라면 1로 고정 (더이상 마이너스 떨어지지않음)              
+                 default값 : 1 로 만듬 */
+
                 onClick={() =>
                   setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
                 }
@@ -106,7 +113,7 @@ const Product = () => {
               <span>FAQ</span>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
