@@ -21,6 +21,7 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="left">
           <div className="item">
+          {/* 🦄public 폴더안 img가져옴 , src="/img/~~~ "*/}
             <img src="/img/en.png" alt="" />
             <KeyboardArrowDownIcon />
           </div>
@@ -38,9 +39,11 @@ const Navbar = () => {
             <Link className ="link" to="/products/3">Children</Link>
           </div>
         </div>
+
         <div className="center">
           <Link className ="link" to="/">LAMASTORE</Link>
         </div>
+        
         <div className="right">
           <div className="item">
             <Link className ="link" to="/">Homepage</Link>

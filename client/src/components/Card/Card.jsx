@@ -10,7 +10,7 @@ const Card = ({ item }) => {
 
       {/* 🦄q: hover하면 이미지가 바뀜.
         컨테이너안에 이미지가 2개있어야 함 */}
-        <div className="image">
+        <section className="image">
           {item?.attributes.isNew && <span>New Season</span>}
           <img
             src={
@@ -26,12 +26,12 @@ const Card = ({ item }) => {
             alt=""
             className="secondImg"
           />
-        </div>
+        </section>
         <h2>{item?.attributes.title}</h2>
-        <div className="prices">
+        <section className="prices">
           <h3>${item.oldPrice || item?.attributes.price + 20}</h3>
           <h3>${item?.attributes.price}</h3>
-        </div>
+        </section>
       </div>
     </Link>
   );

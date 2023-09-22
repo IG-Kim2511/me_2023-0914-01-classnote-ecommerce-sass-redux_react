@@ -8,8 +8,10 @@ const Home = () => {
   return (
     <div className='home'>
       <Slider/>
+      {/* 🦄같은 components props만 다르게해서 여러번 rendering */}
       <FeaturedProducts type="featured"/>
       <Categories/>
+      {/* 🦄같은 components props만 다르게해서 여러번 rendering */}
       <FeaturedProducts type="trending"/>
       <Contact/>
     </div>
